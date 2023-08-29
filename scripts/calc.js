@@ -96,7 +96,7 @@ function calc_delivery(){
         {
         {result.textContent = 'скидка 30% от нашей цены'}
         }    else
-        {result.textContent = 'скидка '+diff_cost;
+        {result.textContent = 'скидка '+diff_cost+' р от нашей цены';
         }
         cost_rn.textContent = 'цена в РН: '+cost_r+' р'
         }
