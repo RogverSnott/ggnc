@@ -25,7 +25,10 @@ a{
     font-size: 20px;
     margin-top: 7px;
  }
+gr{
+   border:2px solid #999;
 
+}
 
  #itog{
     text-align: center;

@@ -5,7 +5,8 @@ function calc_gnc(){
     const result = document.querySelector("#result");
     const cost_rn = document.querySelector("#cost_rn");
     if(parseFloat(costn)>parseFloat(costk)){k=0.7};
-    if (parseFloat(costk)==0||parseFloat(costn)==0|| isNaN(parseFloat(costk))|| isNaN(parseFloat(costn)))
+    let not_null = parseFloat(costk)*parseFloat(costn)
+    if (parseFloat(not_null)==0 ||  isNaN(parseFloat(not_null)))
     {result.textContent = '';
     cost_rn.textContent =''; 
     } 
@@ -34,13 +35,13 @@ function calc_cashback(){
     const cost_rn = document.querySelector("#cost_rn");
     cb_value.textContent = in_cashback.value; ///обновляет значение на странице
     let cashback_value = in_cashback.value; ///само значение
-    if (parseFloat(costk)==0 || parseFloat(costn)==0 || isNaN(parseFloat(costk)) || isNaN(parseFloat(costn)))
+    let not_null = parseFloat(costk)*parseFloat(costn)
+    if (parseFloat(not_null)==0 ||  isNaN(parseFloat(not_null)))
     {result.textContent = '';
     cost_rn.textContent =''; 
-    
     } else    ////проверяем введенные значения на заполнение, если одно не заполнено - очищаем вывод
-
-    {let k = 0.7;
+    {
+    let k = 0.7;
     let base_cost = parseFloat(costk);   ////за базовую берем цену конкурента 
     let base_t = 'цены конкурента';
     let cb = parseFloat(cashback_value)/100/2   ///значение переводим в проценты и делим пополам
@@ -65,21 +66,41 @@ else
 function calc_delivery(){
         let costk = document.getElementById("cost_k").value;
         let costn = document.getElementById("cost_n").value;
-        let del_k = document.getElementById("del_k").value;
         let del_n = document.getElementById("del_n").value;
+        const del_text = document.querySelector("#free_del");
+        let del_k = 0
+        if (!del_text.checked){del_k=1}
         const result = document.querySelector("#result");
         const cost_rn = document.querySelector("#cost_rn");
-        if (parseFloat(costk)==0||parseFloat(costn)==0|| isNaN(parseFloat(costk))|| isNaN(parseFloat(costn)))
+        let not_null = parseFloat(costk)*parseFloat(costn)*parseFloat(del_n)
+        if (parseFloat(not_null)==0|| isNaN(parseFloat(not_null)))
         {result.textContent = '';
         cost_rn.textContent =''; 
         } else
-        if (condition) {
-            
-        } else {
-            
+        {
+        let k = 0.7;
+        let base_cost = parseFloat(costk);   ////за базовую берем цену конкурента 
+        let base_t = 'цены конкурента';
+        let cost_v = parseFloat(base_cost)+parseFloat(del_k) ///вычисляем промежуточную цену, базовая плюс доставка
+        if (parseFloat(costn)+parseFloat(del_n)<=parseFloat(cost_v))
+        {result.textContent = 'Наше предложение не хуже';
+        cost_rn.textContent =''; 
+        } ////проверяем введенные значения на заполнение, если наша цена лучше - очищаем вывод
+        else
+        {
+        let diff_cost = parseFloat(costn)+parseFloat(del_n) -parseFloat(cost_v)   ;
+        let cost = parseFloat(costn) - parseFloat(diff_cost);
+        let costn_k =  Math.round(parseFloat(costn)*parseFloat(k)); ///вычисляем нашу максимальную цену, которую можем дать
+        let cost_r = Math.max(costn_k, cost); ///берем из промежуточных максимальную
+        if (cost_r==costn_k)
+        {
+        {result.textContent = 'скидка 30% от нашей цены'}
+        }    else
+        {result.textContent = 'скидка '+diff_cost;
+        }
+        cost_rn.textContent = 'Цена в РН: '+cost_r+' р'
+        }
         }
 
-result.textContent = 'скидка 30% от нашей цены'
-cost_rn.textContent = 'Цена в РН: '+cost+' р'
         }
 
