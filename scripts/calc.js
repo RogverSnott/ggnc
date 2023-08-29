@@ -12,7 +12,7 @@ function calc_gnc(){
     } 
     else 
     if (parseFloat(costk)<300 || (parseFloat(costn) - parseFloat(costk))<10 )
-    {result.textContent = 'Скидку не делаем';
+    {result.textContent = 'скидку не делаем';
     cost_rn.textContent ='';    
     }
     else
@@ -24,7 +24,7 @@ function calc_gnc(){
     {result.textContent = 'скидка '+discount+'р от цены конурента';
     }
     else{result.textContent = 'скидка 30% от нашей цены'}
-    cost_rn.textContent = 'Цена в РН: '+cost+' р'
+    cost_rn.textContent = 'цена в РН: '+cost+' р'
     }}
 function calc_cashback(){
     let costk = document.getElementById("cost_k").value;
@@ -48,7 +48,7 @@ function calc_cashback(){
     let cost_cb = parseFloat(base_cost)*parseFloat(cb) ///получаем сумму кэшбека в рублях
     let cost = parseFloat(base_cost)-parseFloat(cost_cb) ///вычисляем промежуточную цену, базовая минус кэшбек
     if (parseFloat(costk)-parseFloat(cost_cb)>=parseFloat(costn))
-    {result.textContent = 'Наше предложение лучше';
+    {result.textContent = 'наше предложение лучше';
     cost_rn.textContent =''; 
 } ////проверяем введенные значения на заполнение, если наша цена лучше - очищаем вывод
 else
@@ -61,7 +61,7 @@ else
     else
     {result.textContent = 'скидка '+parseFloat(cashback_value)/2+'% от '+base_t;
     }
-    cost_rn.textContent = 'Цена в РН: '+cost_r+' р'
+    cost_rn.textContent = 'цена в РН: '+cost_r+' р'
     }}}
 function calc_delivery(){
         let costk = document.getElementById("cost_k").value;
@@ -83,7 +83,7 @@ function calc_delivery(){
         let base_t = 'цены конкурента';
         let cost_v = parseFloat(base_cost)+parseFloat(del_k) ///вычисляем промежуточную цену, базовая плюс доставка
         if (parseFloat(costn)+parseFloat(del_n)<=parseFloat(cost_v))
-        {result.textContent = 'Наше предложение не хуже';
+        {result.textContent = 'наше предложение не хуже';
         cost_rn.textContent =''; 
         } ////проверяем введенные значения на заполнение, если наша цена лучше - очищаем вывод
         else
@@ -98,7 +98,7 @@ function calc_delivery(){
         }    else
         {result.textContent = 'скидка '+diff_cost;
         }
-        cost_rn.textContent = 'Цена в РН: '+cost_r+' р'
+        cost_rn.textContent = 'цена в РН: '+cost_r+' р'
         }
         }
 

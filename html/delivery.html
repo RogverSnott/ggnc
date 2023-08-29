@@ -15,22 +15,21 @@
 <form oninput="calc_delivery()">
         <fieldset>
                 <legend>условия конкурента:</legend>
-        <div>цена товара: <input type="number" inputmode="numeric" id="cost_k" size="6" > 
+        <div>цена товара:<br>
+        <input type="number" inputmode="numeric" id="cost_k"  > 
         </div>
         доставка:<br>
 <input type="radio"  id="free_del" name="delivery_cost"  checked="true">
-<label for="free_del">бесплатная</label>
+<label for="free_del">бесплатная</label><br>
 <input type="radio"  id="not_free" name="delivery_cost"  >
 <label for="not_free">1 рубль</label>
-
-
-        <!-- <input type="range" id="cost_del" value="0" min="0" max="1"  step="1"/>
-        <output id="del_text">бесплатная</output> -->
         </fieldset>
-        <fieldset>
-        <legend>наши условия:</legend>
-        <div>цена товара: <input type="number" inputmode="numeric" id="cost_n" size="6" >
-        доставки: <input type="number" inputmode="numeric" id="del_n" size="6"></div>
+        <fieldset><legend>наши условия:</legend>
+        <div>цена товара: <br>
+        <input type="number" inputmode="numeric" id="cost_n">
+        <br>цена доставки: <br>
+        <input type="number" inputmode="numeric" id="del_n">
+</div>
         </fieldset>
         <br>
    <output id = "result"></output>

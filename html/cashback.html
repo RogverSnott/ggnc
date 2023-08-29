@@ -13,12 +13,18 @@
 <body>
 <div>кешбэк</div>
 <form oninput="calc_cashback()">
-	<p>Цена конкурента: <input type="number" inputmode="numeric" id="cost_k" size="6" > р</p>
-   Кэшбек: <output id="cb_value" >10</output>%
-   <input type="range" id="cashback" value="10" min="5" max="50"  step="5"/><span id="rangeValue"></span>
-	<p>Наша цена:	<input type="number" inputmode="numeric" id="cost_n" size="6" > р</p>
-   <output id = "result"></output>
-	<p><output id="cost_rn" ></output></p>
+   <fieldset><legend>условия конкурента</legend>
+	цена товара: <input type="number" inputmode="numeric" id="cost_k"><br>
+   кэшбек: <output id="cb_value" >10</output>%
+   <input type="range" id="cashback" value="10" min="5" max="50"  step="5"/>
+</fieldset>
+<fieldset><legend>наши условия</legend>
+	цена товара:	<input type="number" inputmode="numeric" id="cost_n">
+</fieldset>
+<fieldset><legend>результат</legend>
+   <output id ="result"></output><br>
+	<output id="cost_rn"></output>
+</fieldset>
 </form>
 <a href="../index.html">вернуться</a>
 <script src="../scripts/calc.js"></script>

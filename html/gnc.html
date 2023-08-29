@@ -13,10 +13,16 @@
 <body>
 <div>ГНЦ</div>
 <form oninput="calc_gnc()">
-	<p>Цена конкурента: <input type="number" inputmode="numeric" id="cost_k" size="6" > р</p>
-	<p>Наша цена:	<input type="number" inputmode="numeric" id="cost_n" size="6"> р</p>
-   <output id = "result"></output>
-	<p><output id="cost_rn" ></output></p>
+   <fieldset><legend>условия конкурента:</legend>
+	цена товара:<input type="number" inputmode="numeric" id="cost_k">
+   </fieldset>
+   <fieldset ><legend>наши условия:</legend>
+	цена товара:<input type="number" inputmode="numeric" id="cost_n">
+   </fieldset>
+   <fieldset><legend>результат:</legend>
+   <output id ="result"></output><br>
+	<output id ="cost_rn" class="cost_rn"></output>
+   </fieldset>
 </form>
 <a href="../index.html">вернуться</a>
 <script src="../scripts/calc.js"></script>
