@@ -10,12 +10,13 @@ body{
  .hint{
     color: var(--tg-theme-hint-color);
  }
+
 fieldset
 {
    width: 200px;
 
 }
-.cost_rn{
+#cost_rn{
    color: firebrick;
    font-weight: bold;
 }
