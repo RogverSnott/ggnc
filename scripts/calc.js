@@ -41,7 +41,7 @@ function calc_cashback(){
     } else    ////проверяем введенные значения на заполнение, если одно не заполнено - очищаем вывод
 
     {let k = 0.7;
-    let base_cost = parseFloat(costk);   ////за базовую берем цену конкурента
+    let base_cost = parseFloat(costk);   ////за базовую берем цену конкурента 
     let base_t = 'цены конкурента';
     let cb = parseFloat(cashback_value)/100/2   ///значение переводим в проценты и делим пополам
     let cost_cb = parseFloat(base_cost)*parseFloat(cb) ///получаем сумму кэшбека в рублях
