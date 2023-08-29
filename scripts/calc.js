@@ -47,7 +47,7 @@ function calc_cashback(){
     let cost_cb = parseFloat(base_cost)*parseFloat(cb) ///получаем сумму кэшбека в рублях
     let cost = parseFloat(base_cost)-parseFloat(cost_cb) ///вычисляем промежуточную цену, базовая минус кэшбек
     if (parseFloat(costk)-parseFloat(cost_cb)>=parseFloat(costn))
-    {result.textContent = '';
+    {result.textContent = 'Наше предложение лучше';
     cost_rn.textContent =''; 
 } ////проверяем введенные значения на заполнение, если наша цена лучше - очищаем вывод
 else
