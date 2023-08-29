@@ -62,34 +62,17 @@ else
     }
     cost_rn.textContent = 'Цена в РН: '+cost_r+' р'
     }}}
-    // let cost_in = parseFloat(costk);
-    // let cost_t ='цены конкурента';
-    // if (parseFloat(costn)>parseFloat(costk)) {
-    //     cost_in = parseFloat(costn);
-    //     cost_t = 'нашей цены';
-    //     max_costn = parseFloat(costn)*parseFloat(k)
-    // } 
-    // cb_value.textContent = in_cashback.value;
-    // let cashback_value = in_cashback.value;
-    // let cb = parseFloat(cashback_value)/100/2
+function calc_delivery(){
+        let costk = document.getElementById("cost_k").value;
+        let costn = document.getElementById("cost_n").value;
+        const result = document.querySelector("#result");
+        const cost_rn = document.querySelector("#cost_rn");
+        if (parseFloat(costk)==0||parseFloat(costn)==0|| isNaN(parseFloat(costk))|| isNaN(parseFloat(costn)))
+        {result.textContent = '';
+        cost_rn.textContent =''; 
+        } 
 
-    // let costk_wcb = parseFloat(costk)-parseFloat(costk)*parseFloat(cb)
-    // else
-    // if (parseFloat(costk_wcb)>=parseFloat(costn)) {
-    //     result.textContent = 'наша цена лучше';
-    // cost_rn.textContent ='';
-    // } 
-    // else
-    // {
-    // let costn_k = Math.round(parseFloat(cost_in)*parseFloat(k));
-    // let costn_c = Math.round(parseFloat(cost_in)-parseFloat(cost_in)*parseFloat(cb));
-
-    // let cost = Math.max(costn_k, costn_c);
-    // console.log(cost)
-    // if (cost==costn_c)
-    // {result.textContent = 'скидка '+parseFloat(cashback_value)/2+'% от '+cost_t;
-    // }
-    // else{result.textContent = 'скидка 30% от нашей цены'}
-    // cost_rn.textContent = 'Цена в РН: '+cost+' р'
-    // }
+result.textContent = 'скидка 30% от нашей цены'
+cost_rn.textContent = 'Цена в РН: '+cost+' р'
+        }
 
