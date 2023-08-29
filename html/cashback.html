@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ГНЦ</title>
+   <script src="https://telegram.org/js/telegram-web-app.js"></script> <!--Подключаем скрипт от телеграм-->
+   <link href="../styles/style.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+<div>кешбэк</div>
+<form oninput="calc_cashback()">
+	<p>Цена конкурента: <input type="number" inputmode="numeric" id="cost_k" size="6" value="0"> р</p>
+   Кэшбек: <output id="cb_value" >10</output>%
+   <input type="range" id="cashback" value="10" min="5" max="50"  step="5"/><span id="rangeValue"></span>
+	<p>Наша цена:	<input type="number" inputmode="numeric" id="cost_n" size="6" value="0"> р</p>
+   <output id = "result"></output>
+	<p><output id="cost_rn" ></output></p>
+</form>
+<script src="../scripts/calc.js"></script>
+
+</body>
+
+</html>

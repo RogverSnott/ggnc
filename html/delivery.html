@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ГНЦ</title>
+   <script src="https://telegram.org/js/telegram-web-app.js"></script> <!--Подключаем скрипт от телеграм-->
+   <link href="../styles/style.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+<div>ГНЦ</div>
+   <div>Цена конкурента:</div>
+           <input type="number" inputmode="numeric" id="costk" name="costk"/>
+   <div>Цена доставки конкурента:</div>
+           <input type="number" inputmode="numeric" id="costk_d" name="costk_d"/>
+   <div>Цена наша:</div>
+           <input type="number" inputmode="numeric" id="costn" name="costn"/>
+   <div>Цена доставки наша:</div>
+           <input type="number" inputmode="numeric" id="costn_d" name="costn_d"/>
+           <button id="btn" class="button">Рассчитать</button> <!--Кнопка, чтобы скрыть / показать результат-->
+   <div>Результат:</div>
+   <div id="itog"></div>
+   <script src="../scripts/delivery.js"></script> 
+</body>
+
+</html>
