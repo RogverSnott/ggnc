@@ -65,12 +65,19 @@ else
 function calc_delivery(){
         let costk = document.getElementById("cost_k").value;
         let costn = document.getElementById("cost_n").value;
+        let del_k = document.getElementById("del_k").value;
+        let del_n = document.getElementById("del_n").value;
         const result = document.querySelector("#result");
         const cost_rn = document.querySelector("#cost_rn");
         if (parseFloat(costk)==0||parseFloat(costn)==0|| isNaN(parseFloat(costk))|| isNaN(parseFloat(costn)))
         {result.textContent = '';
         cost_rn.textContent =''; 
-        } 
+        } else
+        if (condition) {
+            
+        } else {
+            
+        }
 
 result.textContent = 'скидка 30% от нашей цены'
 cost_rn.textContent = 'Цена в РН: '+cost+' р'

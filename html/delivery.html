@@ -12,10 +12,19 @@
 
 <body>
 <div>доставка</div>
-
-
-   <a href="../index.html">вернуться</a>
-   <script src="../scripts/delivery.js"></script> 
+<form oninput="calc_delivery()">
+	<div>конкурент:</div>
+        <div>цена товара<input type="number" inputmode="numeric" id="cost_k" size="6" value="0"> 
+        доставки: <input type="number" inputmode="numeric" id="del_k" size="6" value="0"> р</div>
+                <p></p>
+	<div>наша цена:</div>
+        <div>цена товара<input type="number" inputmode="numeric" id="cost_n" size="6" value="0">
+        доставки: <input type="number" inputmode="numeric" id="del_n" size="6" value="0"> р</div>
+   <output id = "result"></output>
+	<p><output id="cost_rn" ></output></p>
+</form>
+<a href="../index.html">вернуться</a>
+<script src="../scripts/calc.js"></script>
 </body>
 
 </html>
