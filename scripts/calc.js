@@ -103,4 +103,23 @@ function calc_delivery(){
         }
 
         }
+function calc_rassrochka(){
+        let costk = document.getElementById("cost_k").value;
+        let costn = document.getElementById("cost_n").value;
+        const no_rass = document.querySelector("#no_rass");
+        let rass_on = 0
+        if (no_rass.checked){k=0.10; t='без рассрочки'} else {k=0.03, t='с рассрочкой'}
+        const result = document.querySelector("#result");
+        const cost_rn = document.querySelector("#cost_rn");
+        let not_null = parseFloat(costk)*parseFloat(costn)
+        if (parseFloat(not_null)==0|| isNaN(parseFloat(not_null)))
+        {result.textContent = '';
+        cost_rn.textContent =''; 
+        } else
+        
+        {
+        result.textContent = 'скидка '+parseFloat(k)*100+'%, '+t;
+        let cost_r = parseFloat(costn)-parseFloat(costn)*k;
+        cost_rn.textContent = 'цена в РН: '+cost_r+' р'; 
+        }}
 
