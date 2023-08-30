@@ -9,6 +9,8 @@ body{
 
 .warn{
    color: firebrick;
+   font-weight: bold;
+   font-size: 25px;
 }
 
 fieldset
