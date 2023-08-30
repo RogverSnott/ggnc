@@ -18,7 +18,7 @@ function changeFields() {
 
     if (delivery.checked) {
         req_konkurent.innerHTML += 'доставка:<br><input type="radio" id="free_del" name="delivery_cost" checked="true">';
-        req_konkurent.innerHTML += '<label for="free_del">бесплатная</label><br></br>';
+        req_konkurent.innerHTML += '<label for="free_del">бесплатная</label><br>';
         req_konkurent.innerHTML += '<input type="radio" id="not_free" name="delivery_cost"><label for="not_free">1 рубль</label>';
         req_me.innerHTML +='<br>цена доставки: <br><input type="number" inputmode="numeric" id="del_n">'
     }
@@ -26,7 +26,8 @@ function changeFields() {
         req_konkurent.innerHTML += '<br>кэшбек: <output id="cb_value" >10</output>%<input type="range" id="cashback_range" value="10" min="5" max="50"  step="5"/>';
     }
     if (rassrochka.checked) {
-        /////req_me.innerHTML += '</div>рассрочка:<br><input type="radio" id="no_rass" name="rassrochka"  checked="true"><label for="no_rass">нет</label><br><input type="radio"  id="yes_rass" name="rassrochka"><label for="yes_rass">есть</label></div>';
+        req_konkurent.innerHTML += '<div class="warn">рассрочка есть</div>';
+        req_me.innerHTML += '<div class="warn">рассрочки нет</div>';
     }
 
 }

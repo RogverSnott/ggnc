@@ -7,9 +7,9 @@ body{
     font-size: 20px;
  }
 
- .hint{
-    color: var(--tg-theme-hint-color);
- }
+.warn{
+   color: firebrick;
+}
 
 fieldset
 {
@@ -21,27 +21,7 @@ fieldset
    font-weight: bold;
 }
 
- .link{
-    color: var(--tg-theme-link-color);
-    padding-top: 5px;
- }
-a{
-   font-size: 20px;
-   padding-top: 15px;
-}
- .button{
-    background: var(--tg-theme-button-color);
-    color: var(--tg-theme-button-text-color);
-    font-size: 20px;
-    margin-top: 7px;
- }
  div{
    background-color: var(--tg-theme-bg-color);
    padding-top: 2px;
  }
- input{
-   height:18px;
-   border:5px solid #c5c5c5;
-   background:#fff;
-   width: 80px;;
-}
