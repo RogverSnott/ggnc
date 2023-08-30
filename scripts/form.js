@@ -3,6 +3,8 @@ function changeFields() {
     var delivery = document.getElementById("delivery");
     var cashback = document.getElementById("cashback");
     var rassrochka = document.getElementById("rassrochka");
+    var result = document.getElementById("result");
+    var cost_rn = document.getElementById("cost_rn");
 
     var req_konkurent = document.getElementById("req_konkurent");
     var req_me = document.getElementById("req_me");
@@ -10,6 +12,8 @@ function changeFields() {
     req_konkurent.innerHTML = '<div>цена товара:<br><input type="number" inputmode="numeric" id="cost_k">';
     req_me.innerHTML = "";
     req_me.innerHTML = '<div>цена товара:<br><input type="number" inputmode="numeric" id="cost_n">';
+    result.innerHTML = "";
+    cost_rn.innerHTML = "";
     if (gnc.checked) {}
 
     if (delivery.checked) {
