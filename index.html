@@ -4,18 +4,42 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>ГНЦ</title>
+   <title>акции</title>
    <script src="https://telegram.org/js/telegram-web-app.js"></script> <!--Подключаем скрипт от телеграм-->
    <link href="styles/style.css" rel="stylesheet" type="text/css" />
 
 </head>
 
 <body>
-<div>Выбор акции</div>
-<a href="html/gnc.html">ГНЦ</a>
-<a href="html/delivery.html">бесплатная доставка</a>
-<a href="html/cashback.html">кешбэк</a>
-<a href="html/rassrochka.html">рассрочка на все</a>
-</body>
+<fieldset><legend>выбор акции:</legend>
+<form id="selectaction" onchange="changeFields()">
+   <input type="radio" id="gnc" name="checkbox">
+   <label for="gnc">гнц</label><br>
+   <input type="radio" id="delivery" name="checkbox">
+   <label for="delivery">бесплатная доставка</label><br>
+   <input type="radio" id="cashback" name="checkbox">
+   <label for="cashback">кешбэк</label><br>
+   <input type="radio" id="rassrochka" name="checkbox">
+   <label for="rassrochka">рассрочка</label>
 
+</form>
+</fieldset>
+<form id="alldata" oninput="all_calc()">
+<fieldset>
+<legend>условия конкурента:</legend>
+<output id ="req_konkurent"></output>
+</fieldset>
+<fieldset>
+<legend>наши условия:</legend>
+<output id ="req_me"></output>
+</fieldset>
+</form>
+<fieldset>
+<legend>результат:</legend>
+<output id ="result"></output><br>
+<output id ="cost_rn"></output>
+</fieldset>
+<script src="./scripts/form.js"></script>
+<script src="./scripts/calc.js"></script>
+</body>
 </html>

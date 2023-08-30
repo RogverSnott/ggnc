@@ -1,3 +1,22 @@
+function all_calc() {
+    var gnc = document.getElementById("gnc");
+    var delivery = document.getElementById("delivery");
+    var cashback = document.getElementById("cashback");
+    var rassrochka = document.getElementById("rassrochka");
+
+    if (gnc.checked) {
+        calc_gnc()
+    }
+    if (delivery.checked) {
+        calc_delivery()
+    }
+    if (cashback.checked) {
+        calc_cashback()
+    }
+    if (rassrochka.checked) {
+        calc_rassrochka()
+    };
+
 function calc_gnc(){
     let costk = document.getElementById("cost_k").value;
     let costn = document.getElementById("cost_n").value;
@@ -30,11 +49,11 @@ function calc_cashback(){
     let costk = document.getElementById("cost_k").value;
     let costn = document.getElementById("cost_n").value;
     const cb_value = document.querySelector("#cb_value");
-    const in_cashback = document.querySelector("#cashback");
+    const cashback_range = document.querySelector("#cashback_range");
     const result = document.querySelector("#result");
     const cost_rn = document.querySelector("#cost_rn");
-    cb_value.textContent = in_cashback.value; ///обновляет значение на странице
-    let cashback_value = in_cashback.value; ///само значение
+    cb_value.textContent = cashback_range.value; ///обновляет значение на странице
+    let cashback_value = cashback_range.value; ///само значение
     let not_null = parseFloat(costk)*parseFloat(costn)
     if (parseFloat(not_null)==0 ||  isNaN(parseFloat(not_null)))
     {result.textContent = '';
@@ -106,9 +125,10 @@ function calc_delivery(){
 function calc_rassrochka(){
         let costk = document.getElementById("cost_k").value;
         let costn = document.getElementById("cost_n").value;
-        const no_rass = document.querySelector("#no_rass");
-        let rass_on = 0
-        if (no_rass.checked){k=0.10; t='без рассрочки'} else {k=0.03, t='с рассрочкой'}
+        ////const no_rass = document.querySelector("#no_rass");
+        ///let rass_on = 0
+        ////if (no_rass.checked){k=0.10; t='без рассрочки'} else {k=0.03, t='с рассрочкой'}
+        let k = 0.10;
         const result = document.querySelector("#result");
         const cost_rn = document.querySelector("#cost_rn");
         let not_null = parseFloat(costk)*parseFloat(costn)
@@ -118,8 +138,18 @@ function calc_rassrochka(){
         } else
         
         {
-        result.textContent = 'скидка '+parseFloat(k)*100+'%, '+t;
-        let cost_r = parseFloat(costn)-parseFloat(costn)*k;
-        cost_rn.textContent = 'цена в РН: '+cost_r+' р'; 
+        let base_cost = parseFloat(costk) ///базовая - конкурента
+        let base_discount = parseFloat(base_cost)*parseFloat(k) ///размер скидки от базовой
+        if (parseFloat(costn)<=parseFloat(base_cost)-parseFloat(base_discount)) {
+            result.textContent = 'наше предложение не хуже';
+        cost_rn.textContent =''; 
+            
+        } else {
+            result.textContent = 'скидка '+parseFloat(k)*100+'%';
+            let cost_r = parseFloat(base_cost)-parseFloat(base_discount);
+            cost_rn.textContent = 'цена в РН: '+cost_r+' р'; 
+        }
+
         }}
 
+    }
