@@ -128,7 +128,8 @@ function calc_rassrochka(){
         ////const no_rass = document.querySelector("#no_rass");
         ///let rass_on = 0
         ////if (no_rass.checked){k=0.10; t='без рассрочки'} else {k=0.03, t='с рассрочкой'}
-        let k = 0.10;
+        let k = 0.70;
+        let r = 0.10;
         const result = document.querySelector("#result");
         const cost_rn = document.querySelector("#cost_rn");
         let not_null = parseFloat(costk)*parseFloat(costn)
@@ -139,15 +140,23 @@ function calc_rassrochka(){
         
         {
         let base_cost = parseFloat(costk) ///базовая - конкурента
-        let base_discount = parseFloat(base_cost)*parseFloat(k) ///размер скидки от базовой
-        if (parseFloat(costn)<=parseFloat(base_cost)-parseFloat(base_discount)) {
+        let base_discount = parseFloat(base_cost)*parseFloat(r) ///размер скидки от базовой
+        let cost = parseFloat(base_cost)-parseFloat(base_discount)
+        if (parseFloat(costn)<=parseFloat(cost)) {
             result.textContent = 'наше предложение не хуже';
         cost_rn.textContent =''; 
             
         } else {
-            result.textContent = 'скидка '+parseFloat(k)*100+'%';
-            let cost_r = parseFloat(base_cost)-parseFloat(base_discount);
-            cost_rn.textContent = 'цена в РН: '+cost_r+' р'; 
+            result.textContent = 'скидка '+parseFloat(k)*100+'% от цены конкурента';
+            let costn_k =  Math.round(parseFloat(costn)*parseFloat(k)); ///вычисляем нашу максимальную цену, которую можем дать
+            let cost_r = Math.max(costn_k, cost); ///берем из промежуточных максимальную
+            if (cost_r==costn_k)
+            {
+            {result.textContent = 'скидка 30% от нашей цены'}
+            }    else
+            {result.textContent = 'скидка 10% от цены конкурента';
+            }
+            cost_rn.textContent = 'цена в РН: '+cost_r+' р'
         }
 
         }}
