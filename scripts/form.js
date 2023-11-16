@@ -23,7 +23,7 @@ function changeFields() {
         req_me.innerHTML +='<br>цена доставки: <br><input type="number" inputmode="numeric" id="del_n">'
     }
     if (cashback.checked) {
-        req_konkurent.innerHTML += '<br>кэшбек: <output id="cb_value" >10</output>%<input type="range" id="cashback_range" value="10" min="5" max="50"  step="5"/>';
+        req_konkurent.innerHTML += '<br>кэшбек: <output id="cb_value" >10</output>%<input type="range" id="cashback_range" value="10" min="5" max="50"  step="1"/>';
     }
     if (rassrochka.checked) {
         req_konkurent.innerHTML += '<div class="warn">рассрочка есть</div>';
