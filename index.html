@@ -13,15 +13,20 @@
 <body>
 <fieldset><legend>выбор акции:</legend>
 <form id="selectaction" onchange="changeFields()">
-   <input type="radio" id="gnc" name="checkbox">
-   <label for="gnc">гнц</label><br>
-   <input type="radio" id="delivery" name="checkbox">
-   <label for="delivery">доставка</label><br>
-   <input type="radio" id="cashback" name="checkbox">
-   <label for="cashback">кешбэк</label><br>
-   <input type="radio" id="rassrochka" name="checkbox">
-   <label for="rassrochka">рассрочка</label>
-
+   <div class="gnc">
+      <input type="radio" id="gnc" name="checkbox">
+      <label for="gnc">гнц</label>
+   </div>
+   <div class="delivery">
+      <input type="radio" id="delivery" name="checkbox">
+      <label for="delivery">доставка</label>
+   </div>
+      <div class="cashback"><input type="radio" id="cashback" name="checkbox">
+      <label for="cashback">кешбэк</label>
+   </div>
+      <div class="rassrochka"><input type="radio" id="rassrochka" name="checkbox">
+      <label for="rassrochka">рассрочка</label>
+   </div>
 </form>
 </fieldset>
 <form id="alldata" oninput="all_calc()">
