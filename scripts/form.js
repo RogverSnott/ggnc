@@ -9,9 +9,9 @@ function changeFields() {
     var req_konkurent = document.getElementById("req_konkurent");
     var req_me = document.getElementById("req_me");
     req_konkurent.innerHTML = "";
-    req_konkurent.innerHTML = '<div>цена товара:<br><input type="number" inputmode="numeric" id="cost_k">';
+    req_konkurent.innerHTML = '<label for="cost_k">цена товара: </label><input type="number" inputmode="numeric" id="cost_k">';
     req_me.innerHTML = "";
-    req_me.innerHTML = '<div>цена товара:<br><input type="number" inputmode="numeric" id="cost_n">';
+    req_me.innerHTML = '<label for="cost_n">цена товара: </label><input type="number" inputmode="numeric" id="cost_n">';
     result.innerHTML = "";
     cost_rn.innerHTML = "";
     if (gnc.checked) {}
