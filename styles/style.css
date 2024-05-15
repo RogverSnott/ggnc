@@ -4,13 +4,13 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 16px;
+    font-size: 20px;
  }
 
 .warn{
    color: firebrick;
    font-weight: bold;
-   font-size: 20px;
+   font-size: 22px;
 }
 
 fieldset
