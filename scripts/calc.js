@@ -128,8 +128,8 @@ function calc_rassrochka(){
         ////const no_rass = document.querySelector("#no_rass");
         ///let rass_on = 0
         ////if (no_rass.checked){k=0.10; t='без рассрочки'} else {k=0.03, t='с рассрочкой'}
-        let k = 0.70;
-        let r = 0.10;
+        let k = 0.85;
+        let r = 0.05;
         const result = document.querySelector("#result");
         const cost_rn = document.querySelector("#cost_rn");
         let not_null = parseFloat(costk)*parseFloat(costn)
@@ -152,9 +152,9 @@ function calc_rassrochka(){
             let cost_r = Math.max(costn_k, cost); ///берем из промежуточных максимальную
             if (cost_r==costn_k)
             {
-            {result.textContent = 'скидка 30% от нашей цены'}
+            {result.textContent = 'скидка '+(parseFloat(100)-parseFloat(k)*100)+ ' % от нашей цены'}
             }    else
-            {result.textContent = 'скидка 10% от цены конкурента';
+            {result.textContent = 'скидка '+parseFloat(r)*100+ ' % от цены конкурента';
             }
             cost_rn.textContent = 'цена в РН: '+cost_r+' р'
         }
